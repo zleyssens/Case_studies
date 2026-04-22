@@ -14,7 +14,7 @@ import pandas as pd
 # ─────────────────────────────────────────────
 # SET THIS to the root folder of your PIOP1 data
 # ─────────────────────────────────────────────
-BIDS_ROOT = r"C:\Users\zoele\Desktop\case_studies_project\PIOP1_AOMIC"  # <-- change this to your actual path
+BIDS_ROOT = r"C:\Users\zoele\Desktop\case_studies_project\ds002785"  # <-- change this to your actual path
 
 # ─────────────────────────────────────────────
 # 1. List all subjects
@@ -83,7 +83,7 @@ if events_files:
 # fMRIPrep outputs a confounds TSV per run with motion, aCompCor, etc.
 confounds_files = sorted(glob.glob(
     os.path.join(FMRIPREP_DIR, "sub-*", "func",
-                 "*task-gstroop*confounds_timeseries.tsv")
+                 "*task-gstroop*confounds_regressors.tsv")
 ))
 
 print(f"\nConfounds files found: {len(confounds_files)}")
