@@ -14,7 +14,7 @@ import pandas as pd
 # ─────────────────────────────────────────────
 # SET THIS to the root folder of your PIOP1 data
 # ─────────────────────────────────────────────
-BIDS_ROOT = r"C:\Users\zoele\Desktop\case_studies_project\ds002785"  # <-- change this to your actual path
+BIDS_ROOT = r"C:\Users\zoele\Desktop\case_studies_project\PIOP1_AOMIC"  # <-- change this to your actual path
 
 # ─────────────────────────────────────────────
 # 1. List all subjects
