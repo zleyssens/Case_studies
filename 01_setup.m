@@ -72,3 +72,26 @@ fprintf('Volumes        : %d\n', cfg.n_vols)
 fprintf('\nSubjects with BOLD     : %d\n', length(bold_subs))
 fprintf('Subjects with events   : %d\n', length(events_subs))
 fprintf('Valid (have both)      : %d\n', length(valid_subs))
+
+%% --- flag subjects with missing sex label ----------------
+no_sex = {};
+for i = 1:height(ptable)
+    sex = ptable.sex{i};
+    if ~strcmp(sex, 'M') && ~strcmp(sex, 'F')
+        no_sex{end+1} = ptable.subject{i};
+    end
+end
+
+if ~isempty(no_sex)
+    fprintf('\nWARNING: %d subjects have no sex label (n/a):\n', length(no_sex))
+    fprintf('  sub-%s\n', no_sex{:})
+    fprintf('These subjects are excluded from cfg.males and cfg.females\n')
+    fprintf('but ARE included in cfg.all_subs for H1 analysis\n\n')
+else
+    fprintf('Sex labels: all subjects have valid M/F labels\n')
+end
+
+fprintf('Subjects with valid sex label: %d (M=%d, F=%d)\n', ...
+    length(cfg.males) + length(cfg.females), ...
+    length(cfg.males), length(cfg.females))
+fprintf('Subjects without sex label   : %d\n', length(no_sex))
