@@ -1,3 +1,4 @@
+% this script was used to generate the script equivalent to the batch GUI 
 
 out_path = fullfile(cfg.results, 'second_level_batch_GUI_equivalent.m');
 fid = fopen(out_path, 'w');
