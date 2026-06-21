@@ -1,4 +1,4 @@
-% Load AAL2
+% Load AAL2 to get cluster regions
 aal_dir = 'C:\Users\zoele\Documents\MATLAB\spm\toolbox\aal';
 V_aal   = spm_vol(fullfile(aal_dir, 'ROI_MNI_V5.nii'));
 aal_vol = spm_read_vols(V_aal);
