@@ -1,4 +1,5 @@
-% this script was used to generate the script equivalent to the batch GUI 
+% second-level analyses were originally ran through SPM batch GUI 
+% this script generated the written script equivalent of what was done in the SPM batch GUI
 
 out_path = fullfile(cfg.results, 'second_level_batch_GUI_equivalent.m');
 fid = fopen(out_path, 'w');
